@@ -10,10 +10,18 @@ HTML/CSS/Javascript勉強用のリポジトリ
 ・
 
 Tips
+・複数の編集ファイルをマルチに開くの便利
+
 <<便利なショートカット>>
 フォルダ作成 ctrl+cmd+n
 フィル作成 ctrl + n
-コマンドパレット ctrl + Shift + P 
+コマンドパレット ctrl + shift + P 
+設定を開く ctrl +,
+
+<<設定>>
+フォントサイズ 18
+空白文字表示 all
+tab補完 on
 
 <<拡張機能>>
 Markdown Preview Enhanced
@@ -23,7 +31,9 @@ Markdown Preview Enhanced
 基本:https://skillhub.jp/blogs/235
 PJ作成:https://qiita.com/wonder_meet/items/6df9170a22c62d89307c
 ショートカット:https://qiita.com/oruponu/items/ae9c720d4522c1606daf
-
+設定 https://reffect.co.jp/editor/visual-studio-code#i-11
+動画:https://dotinstall.com/lessons/basic_vscode
+いい感じにまとまってる https://employment.en-japan.com/engineerhub/entry/2019/06/21/103000
 
 # Git
 <<初期>>
@@ -75,6 +85,12 @@ Gitコミットメッセージ https://suwaru.tokyo/%E3%80%90%E5%BF%85%E9%A0%88%
 
 # HTML
 --TODO 
+
+<<拡張機能>>
+HTML Preview
+
+<<参考URL>>
+https://note.com/cd_ss_829/n/n6243c1bf5c4d
 
 # CSS
 --TODO 
