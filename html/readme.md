@@ -1,5 +1,10 @@
 # HTML
 Tips
+html ..
+list
+form
+table
+よく使うやつ
 
 <<拡張機能>>
 HTML Preview

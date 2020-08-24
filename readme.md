@@ -87,11 +87,7 @@ Gitコミットメッセージ https://suwaru.tokyo/%E3%80%90%E5%BF%85%E9%A0%88%
 階層のreadmeへ
 
 # CSS
---TODO 
-
-<<拡張機能>>
-CSSTree validator
-HTML CSS Support
+階層のreadmeへ
 
 # JavaScript
 --TODO 
