@@ -5,21 +5,25 @@ HTML/CSS/Javascript勉強用のリポジトリ
 --TODO 
 
 # VS Codeの使い方
+・プロジェクト作成
+・フォルダを開く
+・
+
 Tips
 <<便利なショートカット>>
 フォルダ作成 ctrl+cmd+n
 フィル作成 ctrl + n
 コマンドパレット ctrl + Shift + P 
 
+<<拡張機能>>
+Markdown Preview Enhanced
+
+
 <<参考URL>>
 基本:https://skillhub.jp/blogs/235
 PJ作成:https://qiita.com/wonder_meet/items/6df9170a22c62d89307c
 ショートカット:https://qiita.com/oruponu/items/ae9c720d4522c1606daf
 
-
-・プロジェクト作成
-・フォルダを開く
-・
 
 # Git
 <<初期>>
