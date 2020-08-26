@@ -13,12 +13,14 @@
         <h1 class="frame__title">JavaScript</h1>
 
         <div class="frame__inner">
-            <button id="buy">決済する</button>
+            <button id="buy" style="background-color: red;">決済する</button>
             <!-- ここに、JavaScriptを記述します -->
             <script>
                 const btn = document.getElementById('buy');
-                btn.addEventListener('dblclick', () => {
+                btn.addEventListener('click', () => {
                     btn.disabled = true;
+                    btn.style.backgroundColor = '#fcc';
+
                 });
             </script>
         </div>

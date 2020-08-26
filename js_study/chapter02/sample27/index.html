@@ -14,15 +14,29 @@
 
         <div class="frame__inner">
             <div id="timer"></div>
+            <button id="btn">stop</button>
             <!-- ここに、JavaScriptを記述します -->
             <script>
-                let timer = () => {
-                    let now = new Date();
-                    document.getElementById('timer').innerHTML =
-                        `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+                let time = () =>{
+                    let time = new Date();
+                    document.getElementById('timer').innerHTML=time;
                 }
 
-                let timerID = setInterval(timer, 500);
+                let timerID = setInterval(time,500);
+
+                const btn =document.getElementById('btn');
+                btn.addEventListener('click',() =>{
+                    clearInterval(timerID);
+                });
+
+
+                // let timer = () => {
+                //     let now = new Date();
+                //     document.getElementById('timer').innerHTML =
+                //         `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+                // }
+
+                // let timerID = setInterval(timer, 500);
             </script>
         </div>
     </div>
