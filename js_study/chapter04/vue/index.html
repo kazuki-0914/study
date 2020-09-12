@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!--
+            <div id="app">
+                {{message}}
+            </div>
+            <div id="app-2">
+                <span v-bind:title="message">
+                    Hover your mouse
+                </span>
+            </div>
+            <div id="app-3">
+                <span v-if="seen">Now you see me</span>
+            </div>
+            <div id="app-4">
+                <ol>
+                    <li v-for="todo in todos">
+                        {{todo.text}}
+                    </li>
+                </ol>
+            </div>
+            <div id="app-5">
+                <p>{{message}}</p>
+                <button v-on:click="revStr">rev message</button>
+            </div>
+            -->
+            <div id="app-6">
+                <p>{{message}}</p>
+                <input type="text" v-model="message">
+            </div>
+            <div id="app-7">
+                <ol>
+                    <todo-item v-for="done in items" v-bind:todo="done" v-bind:key="done.id"></todo-item>
+                </ol>
+            </div>
+
+            <!--コンポーネント使って部品化していく
+            <div id="app">
+                <app-nav></app-nav>
+                <app-view>
+                    <app-sidebar></app-sidebar>
+                    <app-content></app-content>
+                </app-view>
+            </div>
+            -->
+            <div id="app-8">
+                <ol>
+                    <todo-item1 v-for="done in items" v-bind:todo="done" v-bind:key="done.id"></todo-item1>
+                </ol>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <!-- 開発バージョン、便利なコンソールの警告が含まれています -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                //グローバル定義
+                Vue.component('todo-item', {
+                    props: ['todo'],
+                    template: '<li>{{todo.text}}</li>'
+                })
+                var app7 = new Vue({
+                    el: '#app-7',
+                    data: {
+                        items: [
+                            { id: 0, text: 'attack1' },
+                            { id: 1, text: 'attack2' },
+                            { id: 2, text: 'attack3' },
+                        ]
+                    }
+                })
+                //ローカル定義
+                var todoItem = {
+                    props: ['todo'],
+                    template: '<li>{{todo.text}}</li>'
+                }
+
+
+                var app8 = new Vue({
+                    el: '#app-8',
+                    components: {
+                        'todo-item1': todoItem
+                    },
+                    data: {
+                        items: [
+                            { id: 0, text: 'apple' },
+                            { id: 1, text: 'mikan' },
+                            { id: 2, text: 'banana' },
+                        ]
+                    }
+                })
+                import TodoItem from './components/TodoItem'
+                export default {
+                    components: {
+                        TodoItem
+                    }
+                }
+
+
+                var app6 = new Vue({
+                    el: '#app-6',
+                    data: {
+                        message: 'hello'
+                    }
+                })
+                var app = new Vue({
+                    el: '#app',
+                    data: {
+                        message: 'Helloworld'
+                    }
+                })
+                var app2 = new Vue({
+                    el: '#app-2',
+                    data: {
+                        message: 'You Loaded' + new Date().toLocaleString()
+                    }
+                })
+                var app3 = new Vue({
+                    el: '#app-3',
+                    data: {
+                        seen: false
+                    }
+                })
+                var app4 = new Vue({
+                    el: '#app-4',
+                    data: {
+                        todos: [
+                            { text: 'test1' },
+                            { text: 'test2' },
+                            { text: 'test3' },
+                        ]
+                    }
+                })
+                var app5 = new Vue({
+                    el: '#app-5',
+                    data: {
+                        message: "apple"
+                    },
+                    methods: {
+                        revStr: function () {
+                            this.message = this.message.split('').reverse().join('')
+                        }
+                    }
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

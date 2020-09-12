@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!--
+            <div id="app">
+                {{message}}
+            </div>
+            <div id="app-2">
+                <span v-bind:title="message">
+                    Hover your mouse
+                </span>
+            </div>
+            <div id="app-3">
+                <span v-if="seen">Now you see me</span>
+            </div>
+            <div id="app-4">
+                <ol>
+                    <li v-for="todo in todos">
+                        {{todo.text}}
+                    </li>
+                </ol>
+            </div>
+            <div id="app-5">
+                <p>{{message}}</p>
+                <button v-on:click="revStr">rev message</button>
+            </div>
+            -->
+            <div id="app-6">
+                <p>{{message}}</p>
+                <input type="text" v-model="message">
+            </div>
+            <div id="app-7">
+                <ol>
+                    <todo-item v-for="done in items" v-bind:todo="done" v-bind:key="done.id"></todo-item>
+                </ol>
+            </div>
+
+            <!--コンポーネント使って部品化していく
+            <div id="app">
+                <app-nav></app-nav>
+                <app-view>
+                    <app-sidebar></app-sidebar>
+                    <app-content></app-content>
+                </app-view>
+            </div>
+            -->
+            <div id="app-8">
+                <ol>
+                    <todo-item1 v-for="done in items" v-bind:todo="done" v-bind:key="done.id"></todo-item1>
+                </ol>
+            </div>
+
+            <div id="app-9">
+                <p>{{num1}}:{{num2}}</p>
+                <input type="number" v-model.number="num1" >
+                <input type="number" v-model.number="num2" >
+                <span v-if="show">{{ans}}</span>
+                <!-- <calc></calc> -->
+
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <!-- 開発バージョン、便利なコンソールの警告が含まれています -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                                //ローカル定義
+                var calc = {
+                    props: {
+                        'num1': Number,
+                        'num2':Number
+                    },
+                    computed:{
+                        ans:function(){
+                            return this.num1 +this.num2;
+                        },
+                        show:function(){
+                            return ((this.num1 +this.num2) >0)
+                        }
+                    },
+                    template: `${this.num1 +this.num2}円`
+                }
+                var app9 = new Vue({
+                    el: '#app-9',
+                    // components: {
+                    //     'calc': calc
+                    // },
+                    props: {
+                        'num1': {
+                            type: Number,
+                            default:0
+                        },
+                        'num2': {
+                            type: Number,
+                            default:0
+                        },
+                    },
+                    // data: {
+                    //     num1: 0,
+                    //     num2: 0,
+                    // },
+                    computed:{
+                        ans:function(){
+                            return this.num1 +this.num2;
+                        },
+                        show:function(){
+                            return ((this.num1 +this.num2) >0)
+                        }
+                    }
+                })
+
+
+                //ローカル定義
+                var todoItem = {
+                    props: {
+                        'todo': String
+                    },
+                    template: '<li>{{todo.id}} :{{todo.text}}</li>'
+                }
+
+
+                var app8 = new Vue({
+                    el: '#app-8',
+                    components: {
+                        'todo-item1': todoItem
+                    },
+                    data: {
+                        items: [
+                            { id: 5, text: 'apple' },
+                            { id: 100, text: 'mikan' },
+                            { id: 7, text: 'banana' },
+                        ]
+                    }
+                })
+
+
+                var app6 = new Vue({
+                    el: '#app-6',
+                    data: {
+                        message: 'hello'
+                    }
+                })
+                var app = new Vue({
+                    el: '#app',
+                    data: {
+                        message: 'Helloworld'
+                    }
+                })
+                var app2 = new Vue({
+                    el: '#app-2',
+                    data: {
+                        message: 'You Loaded' + new Date().toLocaleString()
+                    }
+                })
+                var app3 = new Vue({
+                    el: '#app-3',
+                    data: {
+                        seen: false
+                    }
+                })
+                var app4 = new Vue({
+                    el: '#app-4',
+                    data: {
+                        todos: [
+                            { text: 'test1' },
+                            { text: 'test2' },
+                            { text: 'test3' },
+                        ]
+                    }
+                })
+                var app5 = new Vue({
+                    el: '#app-5',
+                    data: {
+                        message: "apple"
+                    },
+                    methods: {
+                        revStr: function () {
+                            this.message = this.message.split('').reverse().join('')
+                        }
+                    }
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
